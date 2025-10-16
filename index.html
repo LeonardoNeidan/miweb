@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riot Games: Desafiamos las Convenciones</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Meta Tags para SEO (Optimización) -->
+    <meta name="description" content="Riot Games es un desarrollador de videojuegos global centrado en el jugador, creador de League of Legends, VALORANT y más. Conoce nuestra cultura y únete a nuestro equipo.">
+    <meta name="keywords" content="Riot Games, desarrollador de videojuegos, cultura empresarial, carreras en videojuegos, trabaja con nosotros, League of Legends, VALORANT, lore, esports, música">
+    <meta name="author" content="Riot Games">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+        }
+        .hero-bg {
+            /* IMAGEN PRINCIPAL: Reemplaza esta URL con la tuya */
+            background-image: linear-gradient(rgba(10, 10, 10, 0.1), rgba(10, 10, 10, 1)), url('https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/f80a304c1ebccef6f0b8f3eb35ba89adfa4ad1de-1280x720.jpg?auto=format&fit=fill&q=80&w=1082');
+            background-size: cover;
+            background-position: center;
+        }
+        .riot-red {
+            color: #d13639;
+        }
+        .bg-riot-red {
+            background-color: #d13639;
+        }
+        .hover\:bg-riot-red-dark:hover {
+            background-color: #a82729;
+        }
+        .card-bg {
+            background-color: #1a1a1a;
+        }
+        .card-border {
+            border-color: #2a2a2a;
+        }
+
+        /* --- Clases para botones interactivos --- */
+        .btn-main-interactive {
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-main-interactive:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(209, 54, 57, 0.4);
+            background-color: #a82729; /* Tono de rojo más oscuro */
+        }
+
+        .btn-secondary-interactive {
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-secondary-interactive:hover {
+            transform: translateY(-3px);
+            background-color: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Estilos para la sección de música */
+        .music-card .play-icon {
+            transition: opacity 0.3s ease-in-out;
+        }
+        .music-card:hover .play-icon {
+            opacity: 1;
+        }
+        .music-card:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- LOGO: Reemplaza la URL en el atributo src con el enlace a tu logo -->
+            <div class="flex items-center space-x-3">
+                <img src="https://www.cisco.com/c/fr_fr/about/case-studies-customer-success-stories/riot-games/jcr:content/Grid/category_atl/layout-category-atl/blade_1895754487/bladeContents/halves/H-Half-1/emphasis_copy/emphasisContents/image/image.img.png/1677141989115.png" alt="Logo de Riot Games" class="h-8">
+                <span class="text-xl font-bold text-white tracking-wider"></span>
+            </div>
+            <!-- Call to Action Principal -->
+            <a href="https://www.riotgames.com/es/trabaja-con-nosotros" target="_blank" rel="noopener noreferrer" class="hidden md:inline-block bg-riot-red text-white font-bold py-2 px-6 rounded-md shadow-lg btn-main-interactive">
+                Trabaja con Nosotros
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section (Enfoque y Media Inmersiva) -->
+        <section class="hero-bg min-h-screen flex items-center justify-center text-center pt-20">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-tight">
+                    Creamos Experiencias que <span class="riot-red">Desafían Expectativas</span>
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                    Somos un equipo global de desarrolladores, artistas y soñadores, unidos por la pasión de servir a los jugadores.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#mision" class="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-bold py-3 px-8 rounded-md btn-secondary-interactive">
+                        Conoce Nuestra Misión
+                    </a>
+                    <a href="#carreras" class="block md:hidden bg-riot-red text-white font-bold py-3 px-8 rounded-md shadow-lg btn-main-interactive">
+                        Trabaja con Nosotros
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Novedades (Carrusel / Anuncios) -->
+        <section class="py-20 bg-black">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Novedades</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Tarjeta de Anuncio Worlds 2025 -->
+                    <div class="card-bg rounded-lg overflow-hidden border card-border transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://static1-es.millenium.gg/articles/3/53/83/3/@/299210-53344108430-7e51d54a25-k-article_cover_bd-1.jpg" alt="Anuncio sobre Worlds 2025" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Worlds 2025: La Cima de los Esports</h3>
+                            <p class="text-gray-400 mb-4">El campeonato mundial de League of Legends regresa. Sigue a los mejores equipos en su lucha por la Copa del Invocador.</p>
+                            <a href="https://lolesports.com/" target="_blank" rel="noopener noreferrer" class="font-semibold riot-red hover:underline">Leer más &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Tarjeta de Anuncio 1 -->
+                    <div class="card-bg rounded-lg overflow-hidden border card-border transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://locosxlosjuegos.com/wp-content/uploads/2021/10/arcane-league-of-legends-netflix.jpg" alt="Anuncio sobre Arcane" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Arcane: Temporada 2 Confirmada</h3>
+                            <p class="text-gray-400 mb-4">La galardonada serie animada regresa. Sumérgete de nuevo en el universo de Piltover y Zaun.</p>
+                            <a href="https://arcane.com/es-mx/" target="_blank" rel="noopener noreferrer" class="font-semibold riot-red hover:underline">Leer más &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Tarjeta de Anuncio 2 -->
+                    <div class="card-bg rounded-lg overflow-hidden border card-border transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://cdn.oneesports.gg/cdn-data/2024/08/Valorant_SentinelsVsGenG_ValorantChampions2024_GroupStageDay1.jpg" alt="Anuncio sobre VALORANT Champions Tour" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">VALORANT Champions Tour 2025</h3>
+                            <p class="text-gray-400 mb-4">El escenario global de esports se prepara para una nueva temporada de jugadas legendarias. Conoce los equipos y el calendario.</p>
+                            <a href="https://valorantesports.com/" target="_blank" rel="noopener noreferrer" class="font-semibold riot-red hover:underline">Leer más &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Tarjeta de Anuncio 3 -->
+                    <div class="card-bg rounded-lg overflow-hidden border card-border transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://cdn.oneesports.co.th/cdn-data/sites/3/2023/12/405279258_812308350694183_7952622150811507167_n.jpg" alt="Anuncio sobre el Fondo de Impacto Social" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Fondo de Impacto Social</h3>
+                            <p class="text-gray-400 mb-4">Comprometidos con crear un cambio positivo en nuestras comunidades a través de la educación y la ciudadanía.</p>
+                            <a href="https://www.riotgames.com/es/quienes-somos" target="_blank" rel="noopener noreferrer" class="font-semibold riot-red hover:underline">Leer más &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Misión y Cultura (Énfasis en el "Lore" de la empresa) -->
+        <section id="mision" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 max-w-4xl mx-auto">
+                    Nuestra Misión: Ser la compañía de videojuegos <span class="riot-red">más centrada en el jugador</span> del mundo.
+                </h2>
+                <p class="text-lg text-gray-400 mb-12 max-w-3xl mx-auto">
+                    Todo lo que hacemos está guiado por nuestra pasión por los jugadores y la comunidad. Estos son los valores que nos definen.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Valor 1 -->
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Los Jugadores Primero</h3>
+                        <p class="text-gray-400">Escuchamos, aprendemos y nos adaptamos. La experiencia del jugador es el núcleo de cada decisión que tomamos.</p>
+                    </div>
+                    <!-- Valor 2 -->
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Soñamos en Grande</h3>
+                        <p class="text-gray-400">Nos atrevemos a tomar riesgos audaces y a explorar nuevas fronteras en el entretenimiento interactivo.</p>
+                    </div>
+                    <!-- Valor 3 -->
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Nos Mantenemos Hambrientos</h3>
+                        <p class="text-gray-400">Nunca nos conformamos. Buscamos constantemente la excelencia y la mejora en nuestros juegos y servicios.</p>
+                    </div>
+                    <!-- Valor 4 -->
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Jugamos en Equipo</h3>
+                        <p class="text-gray-400">La colaboración y el respeto mutuo son la base de nuestra cultura. Juntos, logramos lo imposible.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 4. Nuestros Universos -->
+        <section class="py-20 bg-black">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12">Nuestros Universos</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- Universo 1: League of Legends -->
+                    <a href="https://www.leagueoflegends.com/" target="_blank" rel="noopener noreferrer" class="aspect-w-1 aspect-h-1 group relative overflow-hidden rounded-lg">
+                        <img src="https://piks.eldesmarque.com/thumbs/o/1200/bin/esports/2019/09/LoL2.jpg" alt="League of Legends" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white text-xl font-bold">League of Legends</span>
+                        </div>
+                    </a>
+                    <!-- Universo 2: VALORANT -->
+                     <a href="https://playvalorant.com/" target="_blank" rel="noopener noreferrer" class="aspect-w-1 aspect-h-1 group relative overflow-hidden rounded-lg">
+                        <img src="https://gaming-cdn.com/images/products/6568/616x353/valorant-pc-juego-epic-games-cover.jpg?v=1747212191" alt="VALORANT" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white text-xl font-bold">VALORANT</span>
+                        </div>
+                    </a>
+                    <!-- Universo 3: Teamfight Tactics -->
+                     <a href="https://teamfighttactics.leagueoflegends.com/" target="_blank" rel="noopener noreferrer" class="aspect-w-1 aspect-h-1 group relative overflow-hidden rounded-lg">
+                        <img src="https://i.blogs.es/b1b2bf/tft-para-moviles/450_1000.jpg" alt="Teamfight Tactics" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white text-xl font-bold">Teamfight Tactics</span>
+                        </div>
+                    </a>
+                    <!-- Universo 4: Wild Rift -->
+                     <a href="https://wildrift.leagueoflegends.com/" target="_blank" rel="noopener noreferrer" class="aspect-w-1 aspect-h-1 group relative overflow-hidden rounded-lg">
+                        <img src="https://assets-prd.ignimgs.com/2022/06/14/lol-wild-rift-button-2-1655174382426.jpg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80" alt="Wild Rift" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white text-xl font-bold">Wild Rift</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Música de Nuestros Universos -->
+        <section id="musica" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Música de Nuestros Universos</h2>
+                <p class="text-lg text-gray-400 mb-12 max-w-3xl mx-auto">
+                    Cada nota cuenta una historia. Haz clic en una canción para escucharla en YouTube.
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <!-- Canción 1 -->
+                    <a href="https://www.youtube.com/watch?v=UOxkGD8qRB4" target="_blank" rel="noopener noreferrer" class="music-card group block">
+                        <div class="relative overflow-hidden rounded-lg">
+                            <img src="https://wallpapers.com/images/hd/lol-famous-kda-popstars-dxd2sbguucari5cd.jpg" alt="Carátula de POP/STARS de K/DA" class="w-full transition-transform duration-300">
+                            <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 play-icon">
+                                <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                            </div>
+                        </div>
+                        <h3 class="mt-4 text-xl font-bold">POP/STARS</h3>
+                        <p class="text-gray-400">K/DA</p>
+                    </a>
+                     <!-- Canción 2 -->
+                    <a href="https://www.youtube.com/watch?v=F5tSoaJ93ac" target="_blank" rel="noopener noreferrer" class="music-card group block">
+                        <div class="relative overflow-hidden rounded-lg">
+                            <img src="https://i0.wp.com/www.gamerfocus.co/wp-content/uploads/2021/10/Imagine-Dragons-JID-Enemy-Arcane-League-of-Legends.jpg?fit=1280%2C720&ssl=1" alt="Carátula de Warriors de Imagine Dragons" class="w-full transition-transform duration-300">
+                            <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 play-icon">
+                                <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                            </div>
+                        </div>
+                        <h3 class="mt-4 text-xl font-bold">ENEMY</h3>
+                        <p class="text-gray-400">Imagine Dragons</p>
+                    </a>
+                     <!-- Canción 3 -->
+                    <a href="https://www.youtube.com/watch?v=sVZpHFXcFJw&list=RDsVZpHFXcFJw&start_radio=1" target="_blank" rel="noopener noreferrer" class="music-card group block">
+                        <div class="relative overflow-hidden rounded-lg">
+                            <img src="https://i.ytimg.com/vi/O6Y3Ksn0xTw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCdfcCXZw-7HWAM8_Dg9VSEatazBw" alt="Carátula de GIANTS de True Damage" class="w-full transition-transform duration-300">
+                            <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 play-icon">
+                                <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                            </div>
+                        </div>
+                        <h3 class="mt-4 text-xl font-bold">GIANTS</h3>
+                        <p class="text-gray-400">True Damage</p>
+                    </a>
+                     <!-- Canción 4 -->
+                    <a href="https://www.youtube.com/watch?v=h7MYJghRWt0" target="_blank" rel="noopener noreferrer" class="music-card group block">
+                        <div class="relative overflow-hidden rounded-lg">
+                            <img src="https://i.ytimg.com/vi/aIyyExtnXIk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC4WmYgqGyH7KBGR2NOb5-Yz4hyhQ" alt="Carátula de Die For You de Grabbitz" class="w-full transition-transform duration-300">
+                            <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 play-icon">
+                                <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                            </div>
+                        </div>
+                        <h3 class="mt-4 text-xl font-bold">Die For You</h3>
+                        <p class="text-gray-400">Grabbitz (VALORANT)</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Call to Action Final (Carreras) -->
+        <section id="carreras" class="py-24" style="background-color: #111;">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-5xl font-black text-white">¿Listo para unirte al equipo?</h2>
+                <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+                    Buscamos mentes apasionadas y creativas que quieran dejar su marca en el mundo de los videojuegos. Tu próximo desafío te espera.
+                </p>
+                <div class="mt-8">
+                    <a href="https://www.riotgames.com/es/trabaja-con-nosotros" target="_blank" rel="noopener noreferrer" class="inline-block bg-riot-red text-white font-bold text-lg py-4 px-10 rounded-md shadow-lg btn-main-interactive">
+                        Ver Posiciones Abiertas
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+             <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://twitter.com/riotgames" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors"><span class="sr-only">Twitter</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg></a>
+                <a href="https://www.youtube.com/riotgames" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors"><span class="sr-only">YouTube</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 01-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 01-1.768-1.768C2 15.255 2 12 2 12s0-3.255.418-4.814a2.505 2.505 0 011.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418zM15.194 12L10 15.194V8.806L15.194 12z" clip-rule="evenodd"></path></svg></a>
+                <a href="https://www.instagram.com/riotgames/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors"><span class="sr-only">Instagram</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 4.22c.636-.247 1.363.416 2.427.465C9.793 2.013 10.147 2 12.315 2zm-1.163 1.943c-2.43 0-2.758.01-3.725.058-1.006.047-1.574.208-1.954.365a3.003 3.003 0 00-1.13 1.13c-.157.38-.318.948-.365 1.954-.048.967-.058 1.295-.058 3.725s.01 2.758.058 3.725c.047 1.006.208 1.574.365 1.954a3.003 3.003 0 001.13 1.13c.38.157.948.318 1.954.365.967.048 1.295.058 3.725.058s2.758-.01 3.725-.058c1.006-.047 1.574-.208 1.954-.365a3.003 3.003 0 001.13-1.13c.157-.38.318-.948.365-1.954.048-.967.058-1.295-.058-3.725s-.01-2.758-.058-3.725c-.047-1.006-.208-1.574-.365-1.954a3.003 3.003 0 00-1.13-1.13c-.38-.157-.948-.318-1.954-.365-.967-.048-1.295-.058-3.725-.058zM12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zM12 14a2 2 0 110-4 2 2 0 010 4zm5.5-7.5a1.25 1.25 0 100-2.5 1.25 1.25 0 000 2.5z" clip-rule="evenodd"></path></svg></a>
+            </div>
+            <p>&copy; 2025 Riot Games, Inc. Todos los derechos reservados.</p>
+            <div class="mt-2 text-sm">
+                <a href="https://www.riotgames.com/es/privacy-notice-es" target="_blank" rel="noopener noreferrer" class="hover:text-white">Política de Privacidad</a>
+                <span class="mx-2">&middot;</span>
+                <a href="https://www.riotgames.com/es/terms-of-service-es" target="_blank" rel="noopener noreferrer" class="hover:text-white">Términos de Servicio</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
