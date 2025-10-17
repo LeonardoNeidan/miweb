@@ -24,12 +24,6 @@
             background-color: #0a0a0a;
             color: #f0f0f0;
         }
-        .hero-bg {
-            /* IMAGEN PRINCIPAL: Reemplaza esta URL con la tuya */
-            background-image: linear-gradient(rgba(10, 10, 10, 0.1), rgba(10, 10, 10, 1)), url('https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/f80a304c1ebccef6f0b8f3eb35ba89adfa4ad1de-1280x720.jpg?auto=format&fit=fill&q=80&w=1082');
-            background-size: cover;
-            background-position: center;
-        }
         .riot-red {
             color: #d13639;
         }
@@ -43,7 +37,7 @@
             background-color: #1a1a1a;
         }
         .card-border {
-            border-color: #2a2a2a;
+            border-color: #2a2a0a;
         }
 
         /* --- Clases para botones interactivos --- */
@@ -75,6 +69,23 @@
         .music-card:hover img {
             transform: scale(1.1);
         }
+
+        /* Estilos para el slider del hero */
+        #hero-slider .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            will-change: opacity; /* Performance hint */
+        }
+        #hero-slider .slide.active {
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -96,8 +107,15 @@
 
     <main>
         <!-- 1. Hero Section (Enfoque y Media Inmersiva) -->
-        <section class="hero-bg min-h-screen flex items-center justify-center text-center pt-20">
-            <div class="container mx-auto px-6">
+        <section class="relative min-h-screen flex items-center justify-center text-center pt-20 overflow-hidden">
+             <!-- Contenedor del Slider de Fondo -->
+            <div id="hero-slider" class="absolute top-0 left-0 w-full h-full z-[-1]">
+                <!-- Las imágenes se inyectan aquí con JavaScript -->
+            </div>
+            <!-- Capa de superposición para mejorar la legibilidad del texto -->
+            <div class="absolute top-0 left-0 w-full h-full bg-black/60 z-[-1]"></div>
+
+            <div class="container mx-auto px-6 relative z-10">
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-tight">
                     Creamos Experiencias que <span class="riot-red">Desafían Expectativas</span>
                 </h1>
@@ -313,13 +331,50 @@
             </div>
             <p>&copy; 2025 Riot Games, Inc. Todos los derechos reservados.</p>
             <div class="mt-2 text-sm">
-                <a href="https://www.riotgames.com/es/privacy-notice-es" target="_blank" rel="noopener noreferrer" class="hover:text-white">Política de Privacidad</a>
+                <a href="https://www.riotgames.com/es/privacy-notice-ES" target="_blank" rel="noopener noreferrer" class="hover:text-white">Política de Privacidad</a>
                 <span class="mx-2">&middot;</span>
-                <a href="https://www.riotgames.com/es/terms-of-service-es" target="_blank" rel="noopener noreferrer" class="hover:text-white">Términos de Servicio</a>
+                <a href="https://www.riotgames.com/es/terms-of-service-ES" target="_blank" rel="noopener noreferrer" class="hover:text-white">Términos de Servicio</a>
             </div>
         </div>
     </footer>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sliderContainer = document.getElementById('hero-slider');
+        
+        
+        // --- URLs DE LAS IMÁGENES PARA EL SLIDER ---
+        // Puedes cambiar, añadir o quitar imágenes aquí.
+        const images = [
+            'https://w0.peakpx.com/wallpaper/102/963/HD-wallpaper-arcane-cityscape-arcane.jpg',
+            'https://wallpapercave.com/wp/wp8595646.jpg',
+            'https://i.pinimg.com/originals/24/23/8e/24238e2f2c0d54c91fa6605b3c7ab34a.jpg',
+            'https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/ffe8f50201af51a0956875d2aeeb9e662eb0b228-3840x2160.png'
+        ];
+
+        // Crea los elementos 'div' para cada imagen
+        images.forEach((imgUrl, index) => {
+            const slide = document.createElement('div');
+            slide.classList.add('slide');
+            slide.style.backgroundImage = `url('${imgUrl}')`;
+            if (index === 0) {
+                slide.classList.add('active'); // La primera imagen es la activa al cargar
+            }
+            sliderContainer.appendChild(slide);
+        });
+
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('#hero-slider .slide');
+        const totalSlides = slides.length;
+
+        // Inicia el intervalo para cambiar de imagen
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active'); // Oculta la imagen actual
+            currentSlide = (currentSlide + 1) % totalSlides; // Calcula la siguiente imagen
+            slides[currentSlide].classList.add('active'); // Muestra la siguiente imagen
+        }, 5000); // Cambia la imagen cada 5000 milisegundos (5 segundos)
+    });
+</script>
+
 </body>
 </html>
-
